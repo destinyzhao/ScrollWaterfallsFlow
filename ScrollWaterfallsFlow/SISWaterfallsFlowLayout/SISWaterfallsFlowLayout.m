@@ -64,21 +64,14 @@ const CGFloat FlowLayoutDefaultColumn = 3;
     /** cell的宽度 */
     CGFloat cellWidth = (self.superViewWidth-(numberOfColumns + 1)*columnMargin)/numberOfColumns;
     
-    /** 所有列最大Y值的数组 */
-    //NSMutableArray *maxYColumns = [NSMutableArray new];
-    
     for (int i = 0; i < numberOfColumns; i++) {
         [self.maxYColumns addObject:[NSNumber numberWithFloat:0.0]];
     }
     
     // 计算所有cell的frame
     for (int i = 0; i < numberOfCells; i++) {
-        /** 最小Y值cell的列数(最短的一列) */
-        //NSInteger minCellColumn = 0;
-        
         //存放所有列中最小的Y值
         CGFloat minYCell = [_maxYColumns[_minCellColumn] floatValue];
-        
         //求出最短一列的Y值
         for (int j = 0; j < numberOfColumns; j++) {
             if ([self.maxYColumns[j] floatValue] < minYCell) {
@@ -86,10 +79,8 @@ const CGFloat FlowLayoutDefaultColumn = 3;
                 minYCell = [self.maxYColumns[j] floatValue];
             }
         }
-        
         // cell的高度
         CGFloat cellHeight = [self heightAtIndex:i];
-        
         // cell的位置
         CGFloat cellX = leftMargin + _minCellColumn * (cellWidth + columnMargin);
         CGFloat cellY = 0;

@@ -80,7 +80,7 @@
     
     self.navigationItem.rightBarButtonItem = [self rightBarButton];
     
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 4; i++) {
         TestModel *model = [TestModel new];
         model.title = [NSString stringWithFormat:@"测试商品名称:%d",i];
         model.color = [UIColor grayColor];
