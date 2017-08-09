@@ -118,7 +118,7 @@
 {
     [self.currLoadDataArray removeAllObjects];
     
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 2; i++) {
         TestModel *model = [TestModel new];
         model.title = [NSString stringWithFormat:@"测试商品名称:%d",i];
         model.color = [self randomColor];
